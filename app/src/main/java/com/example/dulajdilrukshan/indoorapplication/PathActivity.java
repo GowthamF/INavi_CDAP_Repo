@@ -408,6 +408,7 @@ public class PathActivity extends AppCompatActivity {
     public void showpaths()
     {
         EditText  txtsub = (EditText) findViewById(R.id.txtval);
+        float density = getResources().getDisplayMetrics().density;
         CreatePaths cp=new CreatePaths();
         float auditoriumX,multimediaX,mscroomX,libraryX,lecthall1X,dccnX,liftX,commonX,staffX,washX,
                 auditoriumY,multimediaY,mscroomY,libraryY,lecthall1Y,dccnY,liftY,commonY,staffY,washY;
@@ -466,18 +467,18 @@ public class PathActivity extends AppCompatActivity {
         lecthall1X=lecturehall1locationarray[0];
         dccnX=dccnlablocationarray[0];
         liftX=liftlocationarray[0];
-        commonX=commonroomlocationarray[0]+50;
-        staffX=staffroomlocationarray[0]+50;
-        washX=washroomlocationarray[0]+50;
+        commonX=commonroomlocationarray[0]+25*density;
+        staffX=staffroomlocationarray[0]+25*density;
+        washX=washroomlocationarray[0]+25*density;
         con1X=con1array[0];
         con2X=con2array[0];
         con4X=con4array[0];
         con5X=con5array[0];
-        con6X=con6array[0]+50;
-        con7X=con7array[0]+50;
-        con8X=con8array[0]+50;
-        con9X=con9array[0]+50;
-        con10X=con10array[0]+50;
+        con6X=con6array[0]+25*density;
+        con7X=con7array[0]+25*density;
+        con8X=con8array[0]+25*density;
+        con9X=con9array[0]+25*density;
+        con10X=con10array[0]+25*density;
         mainX=conMainarray[0];
 
 
@@ -486,27 +487,27 @@ public class PathActivity extends AppCompatActivity {
 
 
        //Y Coordinates
-        auditoriumY= auditoriumlocationarray[1]-65;
-        multimediaY=multimedialocationarray[1]-50;
-        mscroomY=mscroomlocationarray[1]-50;
-        libraryY=librarylocationarray[1]-65;
-        lecthall1Y=lecturehall1locationarray[1]-50;
+        auditoriumY= auditoriumlocationarray[1]-25*density;
+        multimediaY=multimedialocationarray[1]-25*density;
+        mscroomY=mscroomlocationarray[1]-25*density;
+        libraryY=librarylocationarray[1]-25*density;
+        lecthall1Y=lecturehall1locationarray[1]-25*density;
         dccnY=dccnlablocationarray[1]-60;
-        liftY=liftlocationarray[1]-50;
-        commonY=commonroomlocationarray[1]-50;
+        liftY=liftlocationarray[1]-25*density;
+        commonY=commonroomlocationarray[1]-25*density;
         staffY=staffroomlocationarray[1];
-        washY=washroomlocationarray[1]-50;
+        washY=washroomlocationarray[1]-25*density;
 
-        con1Y=con1array[1]-50;
-        con2Y=con2array[1]-50;
-        con4Y=con4array[1]-65;
-        con5Y=con5array[1]-50;
-        con6Y=con6array[1]-50;
-        con7Y=con7array[1]-50;
+        con1Y=con1array[1]-25*density;
+        con2Y=con2array[1]-25*density;
+        con4Y=con4array[1]-25*density;
+        con5Y=con5array[1]-25*density;
+        con6Y=con6array[1]-25*density;
+        con7Y=con7array[1]-25*density;
         con8Y=con8array[1];
-        con9Y=con9array[1]-50;
-        con10Y=con10array[1]-50;
-        mainY=conMainarray[1]-50;
+        con9Y=con9array[1]-25*density;
+        con10Y=con10array[1]-25*density;
+        mainY=conMainarray[1]-25*density;
 
 
 

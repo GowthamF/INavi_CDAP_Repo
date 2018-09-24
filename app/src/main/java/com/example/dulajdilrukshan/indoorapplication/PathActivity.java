@@ -523,13 +523,6 @@ public class PathActivity extends AppCompatActivity {
                        {con10X,con10Y},{mainX,mainY}
                };
 
-
-
-
-
-
-
-
     }
 ///////////////////////////
 

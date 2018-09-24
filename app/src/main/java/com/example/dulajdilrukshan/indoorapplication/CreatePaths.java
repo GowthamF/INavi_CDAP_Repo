@@ -460,6 +460,108 @@ public class CreatePaths {
     }
 
 
+    public void getConnectionArray(float locationarray[][],float connectionarray[][])
+    {
+        locationindex=new ArrayList<>(Arrays.asList("Auditorium","MultimediaLab","MSCRoom","Library","LectureHallOne","DCCNLab",
+                "Lift","CommonRoom","StaffRoom","WashRoom"));
+
+        connectionindex=new ArrayList<>(Arrays.asList("con1","con2","con4","con5","con6","con7","con8","con9","con10","conMain"));
+
+        //StartLocation
+        for (int i = 0; i <paths.size()-1; i++)
+        {
+            for (int j = 0; j < locationindex.size(); j++)
+            {
+                if (paths.get(i).equalsIgnoreCase(locationindex.get(j)))
+                {
+                    for (int k = 0; k < connectionindex.size(); k++)
+                    {
+                        if (paths.get(i+1).equalsIgnoreCase(connectionindex.get(k)))
+                        {
+                            float startX = locationarray[j][0];
+                            float startY = locationarray[j][1];
+                            float stopX = connectionarray[k][0];
+                            float stopY = connectionarray[k][1];
+
+                            break;
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+
+//
+        //Connections
+        for (int i = 1; i < paths.size()-1; i++)
+        {
+            float startX=0,startY=0,stopX=0,stopY=0;
+            for (int j=0;j<connectionindex.size()-1;j++)
+            {
+                if(paths.get(i).equalsIgnoreCase(connectionindex.get(j)))
+                {
+                    {
+                        startX = connectionarray[j][0];
+                        startY = connectionarray[j][1];
+
+//                            stopX = connectionarray[3][0];
+//                            stopY = connectionarray[3][1];
+//                            canvas.drawLine(startX, startY, 0, 0, paint);
+                        break;
+                    }
+
+                }
+
+            }
+            for(int j=0;j<connectionindex.size()-1;j++)
+            {
+                if(paths.get(i+1).equalsIgnoreCase(connectionindex.get(j)))
+                {
+                    stopX=connectionarray[j][0];
+                    stopY=connectionarray[j][1];
+
+                    break;
+                }
+            }
+
+        }
+
+        if(isDestinationDccn)
+        {
+            float startX=0,startY=0,stopX=0,stopY=0;
+
+            startX=connectionarray[3][0];
+            startY=connectionarray[3][1];
+            stopX=connectionarray[9][0];
+            stopY=connectionarray[9][1];
+        }
+
+
+        //Destination
+        for (int j = 0; j < locationindex.size(); j++)
+        {
+            if (paths.get(paths.size()-1).equalsIgnoreCase(locationindex.get(j)))
+            {
+                for (int k = 0; k < connectionindex.size(); k++)
+                {
+                    if (paths.get(paths.size()-2).equalsIgnoreCase(connectionindex.get(k)))
+                    {
+                        float startX = connectionarray[k][0];
+                        float startY = connectionarray[k][1];
+                        float stopX = locationarray[j][0];
+                        float stopY = locationarray[j][1];
+                        break;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+
 
 
     public void  text(TextView textView,int index)

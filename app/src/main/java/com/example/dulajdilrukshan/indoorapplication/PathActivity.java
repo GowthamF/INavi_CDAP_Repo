@@ -377,8 +377,8 @@ public class PathActivity extends AppCompatActivity {
 //        //int index=0;
 //
         showpaths();
-//        cp.createpath(autoCompleteTextViewfrom.getText().toString(),autoCompleteTextViewto.getText().toString());
-        cp.createpath("Auditorium","Library");
+        cp.createpath(autoCompleteTextViewfrom.getText().toString(),autoCompleteTextViewto.getText().toString());
+//        cp.createpath("Auditorium","Library");
         cp.drawingpaths(createpaths(),locationarrays,connectionarray);
 
 //        txtsub.setText(locationarrays[0][0]+" "+locationarrays[0][1]);
@@ -392,9 +392,6 @@ public class PathActivity extends AppCompatActivity {
 
 //
         }
-
-
-
 
 
     public void submit(View view) {
@@ -534,7 +531,7 @@ public class PathActivity extends AppCompatActivity {
 
 
     }
-
+///////////////////////////
 
 
     // SamWickramarachchi - Request Access Permissions Device Location

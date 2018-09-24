@@ -241,9 +241,13 @@ public class CreatePaths {
         if(isDestination1&&isStart1) {
             for (int i = 0; i < path1.size() - 1; i++) {
                 if (!path1.get(i).startsWith("con")) {
-                    if (!path1.get(i).equalsIgnoreCase(startlocation) && !path1.get(i+1).equalsIgnoreCase(destination)) {
+                    if (!path1.get(i).equalsIgnoreCase(startlocation) || !path1.get(i).equalsIgnoreCase(destination)) {
                         path1.remove(i);
                     }
+//                    if(!path1.get(i).equalsIgnoreCase(destination))
+//                    {
+//                        path1.remove(i);
+//                    }
                 }
 
             }
@@ -455,6 +459,8 @@ public class CreatePaths {
 
             }
         }
+
+
 
 
     }

@@ -248,17 +248,7 @@ public class CreatePaths {
 
             }
         }
-//If the Destination is in Auditoriumtostaff and StartLocation is in maintostaff
-        if(isDestination1&&isStart2) {
-            for (int i = 0; i < path1.size(); i++) {
-                if (!path1.get(i).startsWith("con")) {
-                    if (!path1.get(i).equalsIgnoreCase(startlocation) || !path1.get(i).equalsIgnoreCase(destination)) {
-                        path1.remove(i);
-                    }
-                }
 
-            }
-        }
 
 
 
@@ -385,31 +375,44 @@ public class CreatePaths {
 
             }
         }
-//        if(isDestination2)
-//        {
-//            for (int i=0;i<path2.size()-1;i++)
-//            {
-//                if(!destination.equalsIgnoreCase("DCCNLab"))
-//                {
-//                    if(path2.get(i).startsWith("conMain"))
-//                    {
-//                        int index=path2.indexOf("conMain");
-//                        path2.remove(i);
-//                        break;
-//                    }
-//                    break;
-//                }
-//            }
-//        }
+
+//If the Destination is in Auditoriumtostaff and StartLocation is in maintostaff
+        if(isDestination1 && isStart2)
+        {
+            path2.clear();
+            for(int i=0;i<=startlocation2index;i++)
+            {
+                path2.add(maintostaff.get(i));
+            }
+        }
 
 
-//        //locationDCCNLAB
-//        if(destination.equalsIgnoreCase("DCCNLab"))
-//        {
-//            for(int i=0;i<toDccn.size();i++) {
-//                path3.add(toDccn.get(i));
-//            }
-//        }
+
+
+        if(isDestination1&&isStart2) {
+            for (int i = 0; i < path1.size(); i++) {
+                if (!path1.get(i).startsWith("con")) {
+                    if (!path1.get(i).equalsIgnoreCase(destination)) {
+                        path1.remove(i);
+                    }
+                }
+
+            }
+        }
+
+        if(isDestination1&&isStart2) {
+            for (int i = 0; i < path2.size(); i++) {
+                if (!path2.get(i).startsWith("con")) {
+                    if (!path2.get(i).equalsIgnoreCase(startlocation)) {
+                        path2.remove(i);
+                    }
+                }
+
+            }
+        }
+
+
+
 
             paths.addAll(path1);
             paths.addAll(path2);
@@ -424,24 +427,41 @@ public class CreatePaths {
                     {
                         {
                             paths.remove(j);
-                            break;
+
                         }
                     }
-                    break;
+
+                }
+
+            }
+        }
+        if(startlocation.equalsIgnoreCase("StaffRoom"))
+        {
+            for (int i = 0; i < paths.size(); i++)
+            {
+                if (paths.get(i).equalsIgnoreCase("con9"))
+                {
+                    {
+                        paths.remove(i);
+
+                    }
+                }
+
+                if(paths.get(i).equalsIgnoreCase("con10"))
+                {
+                    paths.remove(i);
+
                 }
 
             }
         }
 
 
-
     }
 
-    public void findindex()
-    {
 
 
-    }
+
     public void  text(TextView textView,int index)
     {
         float locationarray[][]=new float[0][1];
